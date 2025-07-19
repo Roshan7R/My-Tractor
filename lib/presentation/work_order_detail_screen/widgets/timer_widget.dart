@@ -23,7 +23,6 @@ class _TimerWidgetState extends State<TimerWidget> {
   Timer? _timer;
   Duration _elapsed = Duration.zero;
   bool _isRunning = false;
-  DateTime? _startTime;
 
   @override
   void initState() {
@@ -41,7 +40,6 @@ class _TimerWidgetState extends State<TimerWidget> {
 
   void _startTimer() {
     if (!_isRunning) {
-      _startTime = DateTime.now();
       _isRunning = true;
       _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
         setState(() {
@@ -65,7 +63,6 @@ class _TimerWidgetState extends State<TimerWidget> {
     setState(() {
       _elapsed = Duration.zero;
       _isRunning = false;
-      _startTime = null;
     });
     widget.onTimerUpdate(_isRunning, _elapsed);
   }

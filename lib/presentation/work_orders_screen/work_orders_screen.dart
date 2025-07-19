@@ -19,7 +19,6 @@ class _WorkOrdersScreenState extends State<WorkOrdersScreen>
     with TickerProviderStateMixin {
   int _selectedTabIndex = 0;
   String _searchQuery = '';
-  bool _isRefreshing = false;
   late AnimationController _refreshController;
 
   // Mock data for work orders
@@ -185,19 +184,12 @@ class _WorkOrdersScreenState extends State<WorkOrdersScreen>
   }
 
   Future<void> _handleRefresh() async {
-    setState(() {
-      _isRefreshing = true;
-    });
-
     _refreshController.forward();
 
     // Simulate API call
     await Future.delayed(const Duration(seconds: 2));
 
     _refreshController.reset();
-    setState(() {
-      _isRefreshing = false;
-    });
 
     // Show success feedback
     if (mounted) {

@@ -25,7 +25,6 @@ class _NotesSectionState extends State<NotesSection> {
   final AudioRecorder _audioRecorder = AudioRecorder();
   List<String> _voiceMemos = [];
   bool _isRecording = false;
-  String? _currentRecordingPath;
 
   @override
   void initState() {
@@ -55,7 +54,6 @@ class _NotesSectionState extends State<NotesSection> {
 
         setState(() {
           _isRecording = true;
-          _currentRecordingPath = path;
         });
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
@@ -77,7 +75,6 @@ class _NotesSectionState extends State<NotesSection> {
         setState(() {
           _voiceMemos.add(path);
           _isRecording = false;
-          _currentRecordingPath = null;
         });
 
         widget.onNotesUpdate(_notesController.text, _voiceMemos);
@@ -89,7 +86,6 @@ class _NotesSectionState extends State<NotesSection> {
     } catch (e) {
       setState(() {
         _isRecording = false;
-        _currentRecordingPath = null;
       });
 
       ScaffoldMessenger.of(context).showSnackBar(
