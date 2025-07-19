@@ -17,7 +17,6 @@ class EquipmentDashboard extends StatefulWidget {
 
 class _EquipmentDashboardState extends State<EquipmentDashboard> {
   int _currentIndex = 0;
-  bool _isRefreshing = false;
 
   // Mock data for equipment
   final List<Map<String, dynamic>> _equipmentList = [
@@ -325,16 +324,8 @@ class _EquipmentDashboardState extends State<EquipmentDashboard> {
   }
 
   Future<void> _handleRefresh() async {
-    setState(() {
-      _isRefreshing = true;
-    });
-
     // Simulate API call
     await Future.delayed(const Duration(seconds: 2));
-
-    setState(() {
-      _isRefreshing = false;
-    });
 
     Fluttertoast.showToast(
       msg: "Equipment status updated",

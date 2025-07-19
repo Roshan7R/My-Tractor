@@ -108,7 +108,7 @@ class AppTheme {
               color: onPrimaryLight)),
 
       // Card theme with subtle elevation for spatial hierarchy
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
           color: cardLight,
           elevation: 2.0,
           shadowColor: shadowLight,
@@ -218,7 +218,7 @@ class AppTheme {
       // Progress indicators for equipment status
       progressIndicatorTheme: const ProgressIndicatorThemeData(color: primaryLight, linearTrackColor: neutralBorderLight),
       sliderTheme: SliderThemeData(activeTrackColor: primaryLight, thumbColor: primaryLight, overlayColor: primaryLight.withValues(alpha: 0.2), inactiveTrackColor: neutralBorderLight, trackHeight: 4.0),
-      tabBarTheme: TabBarTheme(labelColor: primaryLight, unselectedLabelColor: textSecondaryLight, indicatorColor: primaryLight, indicatorSize: TabBarIndicatorSize.tab, labelStyle: GoogleFonts.roboto(fontSize: 16, fontWeight: FontWeight.w500), unselectedLabelStyle: GoogleFonts.roboto(fontSize: 16, fontWeight: FontWeight.w400)),
+      tabBarTheme: TabBarThemeData(labelColor: primaryLight, unselectedLabelColor: textSecondaryLight, indicatorColor: primaryLight, indicatorSize: TabBarIndicatorSize.tab, labelStyle: GoogleFonts.roboto(fontSize: 16, fontWeight: FontWeight.w500), unselectedLabelStyle: GoogleFonts.roboto(fontSize: 16, fontWeight: FontWeight.w400)),
       tooltipTheme: TooltipThemeData(decoration: BoxDecoration(color: textPrimaryLight.withValues(alpha: 0.9), borderRadius: BorderRadius.circular(4)), textStyle: GoogleFonts.roboto(color: surfaceLight, fontSize: 14), padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8)),
       snackBarTheme: SnackBarThemeData(backgroundColor: textPrimaryLight, contentTextStyle: GoogleFonts.roboto(color: surfaceLight, fontSize: 16), actionTextColor: secondaryLight, behavior: SnackBarBehavior.floating, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0))),
 
@@ -268,7 +268,7 @@ class AppTheme {
           centerTitle: true,
           titleTextStyle: GoogleFonts.roboto(
               fontSize: 20, fontWeight: FontWeight.w500, color: onSurfaceDark)),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
           color: cardDark,
           elevation: 2.0,
           shadowColor: shadowDark,

@@ -128,7 +128,6 @@ class _NewProjectWizardWidgetState extends State<NewProjectWizardWidget> {
       child: Row(
         children: List.generate(4, (index) {
           final bool isActive = index <= _currentStep;
-          final bool isCurrent = index == _currentStep;
 
           return Expanded(
             child: Row(

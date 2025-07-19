@@ -20,7 +20,6 @@ class _ConstructionProjectsScreenState extends State<ConstructionProjectsScreen>
     with TickerProviderStateMixin {
   String _selectedFilter = 'active';
   String _searchQuery = '';
-  bool _isRefreshing = false;
   late AnimationController _fabAnimationController;
   late Animation<double> _fabAnimation;
 
@@ -462,16 +461,8 @@ class _ConstructionProjectsScreenState extends State<ConstructionProjectsScreen>
   }
 
   Future<void> _handleRefresh() async {
-    setState(() {
-      _isRefreshing = true;
-    });
-
     // Simulate network refresh
     await Future.delayed(const Duration(seconds: 1));
-
-    setState(() {
-      _isRefreshing = false;
-    });
 
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
